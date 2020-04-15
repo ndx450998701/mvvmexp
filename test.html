@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据劫持原理</title>
+</head>
+<body>
+    <div id='app'></div>
+    <input type="text" id='input' />
+</body>
+<script>
+    var obj = {};
+    var val = '';
+    Object.defineProperty(obj,'msg',{
+        enumerable:true,
+        get(){
+            console.log('执行了get函数');
+            return val;
+        },
+        set(newVal){
+            console.log('执行了set函数');
+            val = newVal;
+            //当改变了对象的属性时，对内容重新进行渲染。
+            document.querySelector('#app').innerHTML = val
+        }
+    })
+    document.querySelector('#input').addEventListener('input',(e) => {
+        console.log(e)
+        obj.msg = e.target.value
+    })
+</script>
+</html>
