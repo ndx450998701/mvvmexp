@@ -16,7 +16,7 @@ export default class Watcher{
         //下面这两步其实等同于eval()，就是运行计算表达式，通过传递过来的vm作用域匹配data里的数据       
         let fn = new Function('scope','with(scope) {return '+exp+'}')
         //这一步其实是将这个watcher赋予给Dep的静态参数，因为计算表达式要调用get方法，在那里
-        //将此watcher添加入dep名单
+        //将此watcher添加入dep名单。
         Dep.target = this;
         let newVal = fn(scope)
         Dep.target = null;

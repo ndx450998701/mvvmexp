@@ -46,7 +46,7 @@ export default class Compiler{
                     this.compilerElementNode(child)
                 }else if(child.nodeType === 3){
                     //nodeType=3说明是文本节点，用文本的编译方法
-                    this.compilerTextNode(child)
+                    this.compilerTextNode(child)  
                 }
             })
         }

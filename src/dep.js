@@ -5,7 +5,7 @@ export default class Dep{
     }
     //把watcher添加进依赖名单的方法
     addList(target){
-        this.list[target.uid] = target
+        this.list[target.uid] = target 
     }
     //当依赖的数据改变时通知所有名单上的watcher
     notify(){

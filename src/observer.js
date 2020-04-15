@@ -12,7 +12,7 @@ export default class Observer{
         if(!data || typeof data !== 'object') return
         Object.keys(data).forEach(key => {
             //对_data进行defineProperty重写
-            this.defineReactive(data,key,data[key])
+            this.defineReactive(data,key,data[key]) 
         })       
     }
     defineReactive(data,key,value){

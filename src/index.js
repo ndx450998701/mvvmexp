@@ -6,7 +6,7 @@ class Vue{
         //先来造Vue的壳子，主要包括获取数据，数据劫持模块，数据编译模块
         //获取数据
         this.$el = document.querySelector(options.el)
-        this.$data = options.data || {};
+        this.$data = options.data || {}; 
         //执行数据代理
         this._proxyData(this.$data)
         //数据劫持模块--传入data数据
